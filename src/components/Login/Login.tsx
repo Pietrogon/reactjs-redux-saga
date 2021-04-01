@@ -1,5 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
+import Button from '../../shared/Button';
+import Container from '../../shared/Container';
+import H2 from '../../shared/H2';
+import Input from '../../shared/Input';
 
 const Form = styled.div`
   background: var(--light);
@@ -11,43 +15,13 @@ const Form = styled.div`
   border: 6px solid var(--blue);
 `;
 
-const Container = styled.div`
-  display: flex;
-  width: 100%;
-  height: 100vh;
-  background: var(--tertiary);
-`;
-
-const H2 = styled.h2`
-  width: 100%;
-  text-align: center;
-  margin-bottom: 20px;
-  margin-top: 60px;
-`;
-
-const Button = styled.button`
-  color: var(--blue);
-  background: var(--secondary);
-  font-size: 1em;
-  width: calc(100% - 10px);
-  border: 0px solid #fff;
-  border-radius: 1rem;
-  padding: 1rem;
-  margin: 5px;
-
-  &:hover {
-    background: var(--primary);
-    color: var(--light);
-  }
-`;
-
 function Login() {
   return (
     <Container>
       <Form>
         <H2>Login</H2>
-        <input type="text" placeholder="E-mail:"></input>
-        <input type="password" placeholder="Senha:"></input>
+        <Input type="text" placeholder="E-mail:"></Input>
+        <Input type="password" placeholder="Senha:"></Input>
         <Button>Entrar</Button>
       </Form>
     </Container>
