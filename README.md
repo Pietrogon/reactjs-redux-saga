@@ -1,6 +1,6 @@
 # ReactJS-Redux-Saga
 
-##Projeto desenvolvido com React.JS + Styled Components + ESLint + Redux + Saga (Front-end)
+## Projeto desenvolvido com React.JS + Styled Components + ESLint + Redux + Saga (Front-end)
 
 [![GitHub license](https://img.shields.io/github/license/Pietrogon/todo-list)](https://github.com/Pietrogon/spring-boot-rest-api/blob/main/LICENSE)
 
