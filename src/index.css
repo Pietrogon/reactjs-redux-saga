@@ -4,18 +4,34 @@
   box-sizing: border-box;
 }
 
-body {
-  --primary: #2B9E7B;
+#root {
+  --primary: #248b6c;
   --secondary: #38D1A3;
   --tertiary: #165240;
   --background: #F5F6F7;
-  --light: #e4e4e4;
+  --light: #eeeeee;
   --gray: #808080;
   --gray-light: #c9c9c9;
   --text: #525252;
-  --red: palevioletred;
+  --red: #b52351;
   --blue: #073e5e;
   --blue-light: #6792ac;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--gray-light); 
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: var(--gray); 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gray); 
 }
 
 @media(max-width: 1080px){
@@ -35,6 +51,10 @@ textarea:focus, input:focus, select:focus, button:focus {
   border: 0 none;
   outline: 0;
 } 
+
+button:active {
+  -webkit-tap-highlight-color: transparent;
+}
 
 body {
   background: var(--background);

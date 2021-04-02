@@ -1,28 +1,21 @@
 import React from 'react';
-import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import Button from '../../shared/Button';
 import Container from '../../shared/Container';
-import H2 from '../../shared/H2';
+import Title from '../../shared/Title';
 import Input from '../../shared/Input';
-
-const Form = styled.div`
-  background: var(--light);
-  width: 380px;
-  height: 380px;
-  margin: auto;
-  border-radius: 2rem;
-  padding: 1rem;
-  border: 6px solid var(--blue);
-`;
+import { Form } from './Styled';
 
 function Login() {
   return (
     <Container>
       <Form>
-        <H2>Login</H2>
+        <Title>Login</Title>
         <Input type="text" placeholder="E-mail:"></Input>
         <Input type="password" placeholder="Senha:"></Input>
-        <Button>Entrar</Button>
+        <Link to="/Projects">
+          <Button>Entrar</Button>
+        </Link>
       </Form>
     </Container>
   );

@@ -9,6 +9,11 @@ const Button = styled.button`
   border-radius: 1rem;
   padding: 1rem;
   margin: 5px;
+  border: 1px solid var(--blue);
+
+  &:focus {
+    border: 1px solid var(--blue);
+  }
 
   &:hover {
     background: var(--primary);
