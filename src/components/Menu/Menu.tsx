@@ -1,6 +1,9 @@
 import React, { useState, FunctionComponent } from 'react';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { LOGOUT } from '../../actions/types';
+import authService from '../../services/auth.service';
 import Title from '../../shared/Title';
 import {
   ButtonClose,
@@ -13,21 +16,30 @@ import {
 const Menu: FunctionComponent<{}> = ({ children }) => {
   const [display, setDisplay] = useState('hidden');
   const [opacity, setOpacity] = useState('0');
+  const dispatch = useDispatch();
 
-  function showMenu() {
+  const showMenu = () => {
     setDisplay('visible');
     setOpacity('1');
-  }
+  };
 
-  function hideMenuWithTime() {
+  const hideMenuWithTime = () => {
     setOpacity('0');
     setTimeout(() => setDisplay('hidden'), 200);
-  }
+  };
 
-  function hideMenu() {
+  const hideMenu = () => {
     setOpacity('0');
     setDisplay('hidden');
-  }
+  };
+
+  const logout = () => {
+    authService.logout();
+    dispatch({
+      type: LOGOUT,
+      payload: null,
+    });
+  };
 
   return (
     <>
@@ -54,7 +66,11 @@ const Menu: FunctionComponent<{}> = ({ children }) => {
           </ButtonClose>
         </StyledMenuHeader>
         <div onClick={() => hideMenu()}>
-          <Link to="/">Login</Link>
+          <Link to="/Projects">Projetos</Link>
+          <Link to="/Appointments">Apontamentos</Link>
+          <Link onClick={logout} to="/">
+            Sair
+          </Link>
         </div>
       </StyledMenu>
     </>

@@ -5,6 +5,7 @@ const Button = styled.button`
   background: var(--secondary);
   font-size: 1em;
   width: calc(100% - 10px);
+  max-width: 400px;
   border: 0px solid #fff;
   border-radius: 1rem;
   padding: 1rem;
@@ -18,6 +19,10 @@ const Button = styled.button`
   &:hover {
     background: var(--primary);
     color: var(--light);
+  }
+
+  @media (max-width: 720px) {
+    max-width: 100%;
   }
 `;
 

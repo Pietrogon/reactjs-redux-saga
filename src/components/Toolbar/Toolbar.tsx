@@ -1,29 +1,19 @@
 import React from 'react';
-import styled from 'styled-components';
+import { useSelector } from 'react-redux';
 import Menu from '../Menu/Menu';
-
-const StyledToolbar = styled.div`
-  display: flex;
-  height: 60px;
-  background: var(--tertiary);
-  box-shadow: 0px 0px 36px #00000066;
-`;
+import { StyledToolbar, TitleToolbar, User } from './Styled';
 
 type ToolbarProps = {
   title: string;
 };
 
-const Title = styled.h2`
-  color: var(--light);
-  padding-left: 65px;
-  padding-top: 15px;
-`;
-
 function Toolbar({ title }: ToolbarProps) {
+  const user = useSelector((state: any) => state.auth.user);
   return (
     <StyledToolbar>
       <Menu></Menu>
-      <Title>{title}</Title>
+      <TitleToolbar>{title}</TitleToolbar>
+      <User>Usuário: {user.username}</User>
     </StyledToolbar>
   );
 }

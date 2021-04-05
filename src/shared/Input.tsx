@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const Input = styled.input`
   color: var(--blue);
@@ -8,6 +8,13 @@ const Input = styled.input`
   border-radius: 1rem;
   padding: 1rem;
   margin: 5px;
+  background: ${(props) => props.theme.background};
 `;
+
+Input.defaultProps = {
+  theme: {
+    background: css`#ffffff;`,
+  },
+};
 
 export default Input;
