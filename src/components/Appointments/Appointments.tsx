@@ -52,13 +52,10 @@ export function Appointments() {
       ...time,
       [event.target.name]: event.target.value,
     });
-    console.log(time);
   };
 
   const onChangeSelectProject = (event: any) => {
-    console.log(selectProject);
     setSelectProject(event.target.value);
-    console.log(selectProject);
   };
 
   const getProjects = () => {

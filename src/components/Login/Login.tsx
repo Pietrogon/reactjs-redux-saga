@@ -8,7 +8,6 @@ import { useDispatch } from 'react-redux';
 import authService from '../../services/auth.service';
 import { LOGIN_FAIL, LOGIN_SUCCESS } from '../../actions/types';
 import { Redirect } from 'react-router-dom';
-import store from '../../store';
 
 export function Login(props: any) {
   let username = '';
@@ -31,7 +30,6 @@ export function Login(props: any) {
           type: LOGIN_SUCCESS,
           payload: { user: data },
         });
-        console.log('store: ', store);
         setRPath('/projects');
       },
       () => {
@@ -41,7 +39,6 @@ export function Login(props: any) {
         });
       }
     );
-    console.log('dispatch');
   }
 
   if (rpath) {
@@ -56,7 +53,7 @@ export function Login(props: any) {
           onChange={onChangeUsername}
           name="username"
           type="text"
-          placeholder="E-mail:"
+          placeholder="Usuário:"
         ></Input>
         <Input
           onChange={onChangePassword}

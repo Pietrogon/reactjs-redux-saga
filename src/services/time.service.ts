@@ -5,7 +5,6 @@ const getTimeDifference = (startTime: string, endTime: string) => {
   const endTimeDate = new Date(endTime);
 
   const diffTime = Math.abs(Number(endTimeDate) - Number(startTimeDate));
-  console.log();
   return diffTime;
 };
 

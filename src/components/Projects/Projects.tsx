@@ -21,7 +21,7 @@ export function Projects() {
 
   const componentWillLoad = () => {
     if (user) {
-      if (!projects.length) {
+      if (projects && !projects.length) {
         getProjects();
       }
     } else {
@@ -33,7 +33,6 @@ export function Projects() {
     isAdmin &&
       dataService.getProjects().then(async (res) => {
         const data = await res.json();
-        console.log('data', data);
         dispatch({
           type: SET_PROJECTS,
           payload: data,
